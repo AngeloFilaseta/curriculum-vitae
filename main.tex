@@ -1,27 +1,15 @@
-\documentclass{article}
-% Import all the packages
-\input{imports}
-% Setup the layout of the document
-\input{layangelo-latex/layout}
-\addbibresource{document/bibliography.bib}
+%!TEX TS-program = xelatex
+
+\documentclass[a4paper,10pt]{article}
+
+\input{imports.tex}
+\input{document/commands.tex}
+\input{document/style.tex}
+
+\pagestyle{empty}
 
 \begin{document}
 
-% Print the title (first page)
-\input{document/title}
-
-\tableofcontents
-
-\newpage
-
-\listoffigures
-
-\newpage
-
-\input{document/content}
-
-\newpage
-
-\printbibliography
+\input{document/content.tex}
 
 \end{document}
