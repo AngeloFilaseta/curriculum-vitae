@@ -1,0 +1,82 @@
+\newcommand\resume[2]{%
+  \ifnum#1>#2
+    $#1 > #2$
+  \else
+    \ifnum#1<0
+      $#1 < 0$
+    \else
+      \ifnum#2<0
+        $#2 < 0$
+      \else
+        \tikz{%
+        \ifx#20
+        \else
+          \foreach \i in {1,...,#2} {
+            \filldraw[black!20] (\i ex,0) circle (0.4ex);
+          };
+        \fi
+        \ifx#10
+        \else
+          \foreach \i in {1,...,#1} {
+            \filldraw[black] (\i ex,0) circle (0.4ex);
+          };
+        \fi
+        }
+      \fi
+    \fi
+  \fi
+}
+
+
+\newcommand{\cvpersonalinfo}[2]{
+    \begin{minipage}[t]{\cvleftcolumnwidth}
+        \vspace{0mm}
+        \raggedleft #1
+    \end{minipage}
+    \hspace{\cvcolumngapwidth}
+    \begin{minipage}[t]{\cvrightcolumnwidth}
+        \vspace{0mm}
+        #2
+    \end{minipage}
+    \vspace{\cvafteritemskipamount}
+}
+
+\newcommand{\cvname}[1]{
+    \cvnamestyle{#1}
+    \vspace{\cvafternameskipamount}
+}
+
+\newcommand{\cvpersonalinfolinewithicon}[3]{
+    \raisebox{.5\fontcharht\font`E-.5\height}{\includegraphics[#1]{#2}}
+    #3
+    \vspace{\cvafterpersonalinfolineskipamount}
+}
+
+\newcommand{\cvsection}[1]{
+	\\
+    \begin{minipage}[t]{\cvleftcolumnwidth}
+        \raggedleft\cvsectionstyle{#1}
+    \end{minipage}
+    \hspace{\cvcolumngapwidth}
+    \begin{minipage}[t]{\cvrightcolumnwidth}
+        \textcolor{cvrulecolor}{\rule{\cvrightcolumnwidth}{0.3mm}}
+    \end{minipage}
+    \vspace{\cvaftersectionskipamount}
+}
+
+\newcommand{\cvitem}[2]{
+    \begin{minipage}[t]{\cvleftcolumnwidth}
+        \raggedleft #1
+    \end{minipage}
+    \hspace{\cvcolumngapwidth}
+    \begin{minipage}[t]{\cvrightcolumnwidth}
+        \setlength{\parskip}{\cvparskip} #2
+    \end{minipage}
+    \vspace{\cvafteritemskipamount}
+}
+
+\newcommand{\cvtitle}[1]{
+    \cvtitlestyle{#1}
+    \vspace{\cvaftertitleskipamount}
+	\vspace{-\cvparskip}
+}

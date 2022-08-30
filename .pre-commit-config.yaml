@@ -21,3 +21,12 @@ repos:
   rev: v2.1.0
   hooks:
   - id: docker-compose-check # checks that docker-compose files are valid.
+
+- repo: https://github.com/jonasbb/pre-commit-latex-hooks
+  rev: v1.3.0
+  hooks:
+  - id: american-eg-ie # US English requires a comma after "e.g." and "i.e."
+  - id: csquotes # ensure the use of LaTeX csquotes and prohibits manual quotation marks.
+  - id: no-space-in-cite # ensure there are no whitespace characters in the \cite command.
+  - id: tilde-cite # line breaks should never occur before the citation, thus they need to be protected with the ~.
+  - id: unique-labels # ensure each label is only defined once.
