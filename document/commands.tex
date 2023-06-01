@@ -85,3 +85,5 @@
 \newcommand*{\TakeFourierOrnament}[1]{{%
 \fontencoding{U}\fontfamily{futs}\selectfont\char#1}}
 \newcommand*{\danger}{\TakeFourierOrnament{49}}
+
+\newcommand{\boxed}[1]{\tikz[baseline=(X.base)]\node [draw=black,fill=gray!10,semithick,rectangle,inner sep=3pt, rounded corners=2pt] (X) {#1};}
