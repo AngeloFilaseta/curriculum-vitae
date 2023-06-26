@@ -2,13 +2,25 @@
 
 \input{imports.tex}
 \input{document/commands.tex}
-
 \input{document/style.tex}
+%\pagestyle{empty}
+\nocite{*}
+\addbibresource{bibliography/publications.bib}
 
-\pagestyle{empty}
+\defbibenvironment{bibliography}
+  {\list
+     {}
+     {%
+      \setlength{\labelwidth}{0pt}%
+      \setlength{\leftmargin}{0pt}%
+      \setlength{\labelsep}{0pt}%
+      \addtolength{\leftmargin}{0pt}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{##1\hss}}
+  {\endlist}
+  {\item}
 
 \begin{document}
-
 \input{document/content.tex}
-
 \end{document}
