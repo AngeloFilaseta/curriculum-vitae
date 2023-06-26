@@ -89,3 +89,18 @@
   \tikz[baseline= (X.base)]
   \node[draw=black,fill=gray!10,semithick,rectangle,inner sep=3pt, rounded corners=2pt] (X) {#1};
 }
+
+% RE-definition of bibliography style to output in a suitable format for CV
+\defbibenvironment{bibliography}
+  {\list
+     {}
+     {%
+      \setlength{\labelwidth}{0pt}%
+      \setlength{\leftmargin}{0pt}%
+      \setlength{\labelsep}{0pt}%
+      \addtolength{\leftmargin}{0pt}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+      \renewcommand*{\makelabel}[1]{##1\hss}}
+  {\endgilist}
+  {\item}
